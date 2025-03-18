@@ -1,6 +1,6 @@
 # What is_cloud computing theory - kviz
 # Jani Kojc
-
+# ---------------------------------------
 
 1.
 Which of the following is an example of virtualization?
