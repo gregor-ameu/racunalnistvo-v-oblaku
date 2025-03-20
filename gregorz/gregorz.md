@@ -1,7 +1,7 @@
-# Test
+# 1. domača naloga
 
----
+Povezava do spletne strani.
 
-*italic*
+# 2. domača naloga
 
-**bold**
+Kviz.
