@@ -1,3 +1,7 @@
+# Domača naloga 2 - 2 faktorska avtentikacija
+Za dodatno varnost smo na AWS Root account dodali dvo-faktorsko avtentikacijo. Izbrali smo Microsoftovo Authenticator aplikacijo.<br/>
+V postopku dodajanja smo s aplikacijo skenirali dano QR kodo, nato pa vpisali 2 zaporedni enkratni kodi, kot potrdilo.
+
 # Domača naloga 1 - Kviz
 1 - D multiple VMs running on the same server <br />
 2 - A Compute <br />
