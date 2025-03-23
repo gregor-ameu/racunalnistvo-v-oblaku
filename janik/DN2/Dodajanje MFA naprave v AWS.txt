@@ -8,6 +8,7 @@ Kliknite Next.
 
 Korak 2: Skeneranje QR kode v Microsoft Authenticator
 Na telefonu odprite aplikacijo Microsoft Authenticator.
+Kliknite ikono za QR kodo.
 V AWS konzoli kliknite Show QR code, nato skenirajte prikazano QR kodo.
 (Slika 2)
 
