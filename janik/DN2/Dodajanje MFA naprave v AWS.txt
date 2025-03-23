@@ -1,0 +1,25 @@
+Korak 1: Dodajanje MFA naprave v AWS
+Pojdite v AWS IAM konzolo in izberite uporabnika, kateremu želite dodeliti MFA.
+Kliknite Assign MFA device (Dodeli MFA napravo).
+V polje Device name vnesite ime naprave (npr. Kojc_telefon).
+Izberite možnost Authenticator app (Aplikacija za avtentikacijo).
+Kliknite Next.
+(Slika 1)
+
+Korak 2: Skeneranje QR kode v Microsoft Authenticator
+Na telefonu odprite aplikacijo Microsoft Authenticator.
+V AWS konzoli kliknite Show QR code, nato skenirajte prikazano QR kodo.
+(Slika 2)
+
+Korak 3: Vnos MFA kod
+Po skeniranju QR kode bo Microsoft Authenticator začel generirati šestmestne kode.
+V AWS konzolo vnesite prvo kodo iz aplikacije.
+Počakajte 30 sekund in vnesite drugo kodo.
+Kliknite Add MFA.
+(Slika 3)
+
+Korak 4: Potrditev uspešne MFA nastavitve
+MFA naprava bo zdaj vidna v AWS pod uporabniškim profilom.
+Vaša MFA naprava je uspešno dodana in pripravljena za uporabo pri prijavi.
+(Slika 4)
+
