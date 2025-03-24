@@ -1,3 +1,10 @@
+# Domača naloga 2: Authenticator MFA
+
+##Naloga je bila, da svoj account v AWS zavarujemo z MFA. Tega sem se lotila tako, da sem si sprva na mobilni telefon naložila Google Authenticator in se lotila v AWS pod My security credentials dodat My multi-factor authentication (MFA). Nato sen si izbrala ime PatricijaDevice ter se odločila za drugo opcijo zavarovanje z Authenticator app. Ker je računalnik različne blagovne zanmke kot telefon sem lahko dostopala samo do Google Authenticatorja. Tako sem na telefon namestila aplikacijo in skenirala QR kodo. Nato sem morala v AWS zapisati dve zaporedni kodi, ki sem ji prodbila na 30 sekund. S tem sem zavarovala svoj AWS account. 
+![DMslika](https://github.com/user-attachments/assets/11070185-bef4-40ce-9c81-9d5b5e058710)
+
+
+
 # Domača naloga 1: ODGOVORI NA VPRAŠANJA
 
 ## Vprašanje 1: Which of the following is an example of virtualization?
