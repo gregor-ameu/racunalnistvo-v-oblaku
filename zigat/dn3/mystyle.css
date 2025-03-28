@@ -1,0 +1,25 @@
+body{
+    background-color: gray
+}
+
+h1{
+    color:rgb(0, 43, 99);
+    margin-left: 20px;
+
+}
+h2{
+    margin-left: 25px;
+}
+h3{
+    margin-left: 15px;
+
+}
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+img{
+    margin-left: 20px;
+}
