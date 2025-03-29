@@ -1,0 +1,41 @@
+	Kaj je naslov IP?
+IP naslov (Internet Protocol naslov) je edinstvena številčna oznaka, ki jo dobi vsaka naprava, povezana v omrežje (npr. internet). Omogoča prepoznavanje in komunikacijo med napravami znotraj omrežja. Primer IP naslova je: 192.168.1.10.
+
+
+	Zakaj potrebujemo naslove IP?
+IP naslovi omogočajo, da podatki v omrežju pridejo na pravi naslov – torej do prave naprave. So osnova za delovanje interneta, saj brez njih računalniki, strežniki in druge naprave ne bi vedele, kam poslati informacije (npr. spletno stran, e-pošto ipd.).ž
+
+
+	Katerim napravam se dodeli IP naslov?
+IP naslov se dodeli vsaki napravi, ki se poveže v omrežje, kot so:
+- računalniki,
+- pametni telefoni in tablice,
+- tiskalniki v omrežju,
+- usmerjevalniki (routerji),
+- pametne televizije,
+- varnostne kamere,
+- in druge pametne naprave (IoT).
+
+
+	Katera dva dela sestavljata naslov IP
+IP naslov je sestavljen iz dveh delov:
+- Omrežni del – določa, v katerem omrežju se naprava nahaja.
+- Gostiteljski del (host del) – določa točno katera naprava v tem omrežju je to.
+
+
+	Kako vemo kateri del je kateri?
+To določa mrežna maska (ang. subnet mask).
+Primer: če je IP naslov 192.168.1.10 in mrežna maska 255.255.255.0, to pomeni:
+- Omrežni del je 192.168.1,
+- Host del (naprava) pa je 10.
+Mrežna maska pove, koliko bitov (delov) IP naslova pripada omrežju in koliko napravam v tem omrežju.
+
+
+	Napiši dva pravilna IP naslova in dva napačna IP naslova.
+Pravilna IP naslova:
+192.168.0.1
+10.0.0.254
+
+Napačna IP naslova:
+256.100.50.25 = številke v IP naslovu so lahko od 0 do 255
+192.168.1 = manjkajo deli, mora jih biti štiri (ločeni s pikami)
