@@ -6,7 +6,7 @@ Ukaza **'aws mv'** in **'aws sync'** sta del AWS CLI (Command Line Interface) in
 ---
 
 
-## `aws s3 mv`
+## **aws s3 mv**
 
 Ukaz 'mv' pomeni 'move' — premakni datoteko ali mapo.
 
@@ -40,7 +40,7 @@ aws s3 mv <vir> <cilj> [--recursive]
 ---
 
 
-## `aws s3 sync`
+## **aws s3 sync**
 
 Ukaz 'sync' pomeni 'synchronize' — uskladi vsebino dveh lokacij (lokalno ↔ S3 ali S3 ↔ S3).
 
