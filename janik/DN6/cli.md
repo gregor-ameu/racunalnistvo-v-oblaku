@@ -1,12 +1,14 @@
-# AWS CLI – `mv` in `sync`
+# AWS CLI – mv in sync
 
-Ukaza `aws mv` in `aws sync` sta del AWS CLI (Command Line Interface) in služita za upravljanje datotek v Amazon S3. 
+Ukaza **'aws mv'** in **'aws sync'** sta del AWS CLI (Command Line Interface) in služita za upravljanje datotek v Amazon S3. 
+
 
 ---
 
+
 ## `aws s3 mv`
 
-Ukaz **`mv`** pomeni *move* — premakni datoteko ali mapo.
+Ukaz 'mv' pomeni 'move' — premakni datoteko ali mapo.
 
 ### Sintaksa:
 ```bash
@@ -31,14 +33,16 @@ aws s3 mv <vir> <cilj> [--recursive]
    ```
 
 ### Pomembno:
-- `mv` **izbriše** datoteke iz izvorne lokacije po prenosu.
+- mv izbriše datoteke iz izvorne lokacije po prenosu.
 - Ne sinhronizira datotek, samo premakne tiste, ki obstajajo.
+
 
 ---
 
+
 ## `aws s3 sync`
 
-Ukaz **`sync`** pomeni *synchronize* — uskladi vsebino dveh lokacij (lokalno ↔ S3 ali S3 ↔ S3).
+Ukaz 'sync' pomeni 'synchronize' — uskladi vsebino dveh lokacij (lokalno ↔ S3 ali S3 ↔ S3).
 
 ### Sintaksa:
 ```bash
@@ -63,22 +67,24 @@ aws s3 sync <vir> <cilj> [opcije]
    ```
 
 ### Pomembno:
-- Prenese **samo nove ali spremenjene** datoteke.
-- Ne briše privzeto ničesar – razen če dodamo `--delete`.
+- Prenese samo nove ali spremenjene datoteke.
+- Ne briše privzeto ničesar – razen če dodamo '--delete'.
 
 ### Primer z brisanjem:
+S tem ukazom se v cilju izbrišejo datoteke, ki jih v viru ni več – popolna sinhronizacija.
 ```bash
 aws s3 sync ./moja-mapa s3://moj-bucket/ --delete
 ```
-⬆️ S tem ukazom se **v cilju izbrišejo** datoteke, ki jih v viru ni več – popolna sinhronizacija.
+
 
 ---
 
+
 ## Razlike na kratko:
 
-| Funkcija             | `aws s3 mv`                           | `aws s3 sync`                       |
+| Funkcija             | aws s3 mv                             | aws s3 sync                         |
 |----------------------|---------------------------------------|-------------------------------------|
 | Namen                | Premikanje (z brisanjem iz izvora)    | Sinhronizacija                      |
-| Brisanje iz izvora   | Da                                    | Ne (razen z `--delete` na cilju)    |
-| Podpora za rekurzijo | Z `--recursive`                       | Vedno rekurzivno                    |
+| Brisanje iz izvora   | Da                                    | Ne (razen z '--delete' na cilju)    |
+| Podpora za rekurzijo | Z '--recursive'                       | Vedno rekurzivno                    |
 | Primeren za backup   | Ne (izbriše izvor!)                   |  Da                                 |
