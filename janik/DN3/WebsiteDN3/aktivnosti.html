@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moje aktivnosti - Jani Kojc</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <nav class="navbar">
+    <button onclick="window.location.href='index.html'">O meni</button>
+    <button onclick="window.location.href='aktivnosti.html'">Moje aktivnosti</button>
+    <button onclick="window.location.href='alma_mater.html'">Alma mater</button>
+  </nav>
+
+  <main class="main-content">
+    <section class="activities-section">
+      <h1>Moje aktivnosti</h1>
+      <div class="input-group">
+        <input type="text" id="aktivnostInput" placeholder="Vnesi aktivnost" />
+        <select id="znanjeSelect">
+          <option value="Začetnik">Začetnik</option>
+          <option value="Izkušeni">Izkušeni</option>
+          <option value="Profesionalec">Profesionalec</option>
+        </select>
+        <input type="text" id="casInput" placeholder="Čas izvajanja (npr. 2 leti)" />
+        <button onclick="dodajAktivnost()">Dodaj</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Aktivnost</th>
+            <th>Znanje</th>
+            <th>Čas</th>
+            <th>Odstrani</th>
+          </tr>
+        </thead>
+        <tbody id="aktivnostiTabela">
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    async function naloziAktivnosti() {
+      const res = await fetch("nalozi.php");
+      const aktivnosti = await res.json();
+      const tabela = document.getElementById("aktivnostiTabela");
+      tabela.innerHTML = "";
+
+      aktivnosti.forEach(a => {
+        const vrstica = document.createElement("tr");
+        vrstica.innerHTML = `
+          <td>${a.aktivnost}</td>
+          <td>${a.znanje}</td>
+          <td>${a.cas}</td>
+          <td><button class="remove-btn" onclick="odstraniAktivnost(${a.id})">X</button></td>
+        `;
+        tabela.appendChild(vrstica);
+      });
+    }
+
+    async function dodajAktivnost() {
+      const aktivnost = document.getElementById("aktivnostInput").value.trim();
+      const znanje = document.getElementById("znanjeSelect").value;
+      const cas = document.getElementById("casInput").value.trim();
+
+      if (!aktivnost || !cas) return alert("Izpolni vsa polja!");
+
+      const res = await fetch("dodaj.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ aktivnost, znanje, cas })
+      });
+
+      const data = await res.text();
+      alert(data);
+      naloziAktivnosti();
+
+      document.getElementById("aktivnostInput").value = "";
+      document.getElementById("casInput").value = "";
+      document.getElementById("znanjeSelect").value = "Začetnik";
+    }
+
+    async function odstraniAktivnost(id) {
+      const res = await fetch("izbrisi.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+      });
+
+      const data = await res.text();
+      alert(data);
+      naloziAktivnosti();
+    }
+
+    // Ob zagonu strani
+    window.onload = naloziAktivnosti;
+  </script>
+</body>
+</html>
