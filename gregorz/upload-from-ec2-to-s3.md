@@ -1,3 +1,9 @@
+# AWS Services demo
+
+This is a simple Python Flask webapp that uploads file to S3. We also provide AWS Lambda function that logs file's name to AWS CloudWatch.
+
+## Web application
+
 On your EC2 instance:
 1. Stop apache, from now on, we will be serving pages with flask: `sudo systemctl status apache2`
 2. Install flask: `sudo apt install python3-flask`
@@ -58,3 +64,18 @@ Press CTRL+C to quit
 
 7. Visit your EC2's public IP with browser and try uploading a file.
 8. Ensure it's inside your S3 bucket.
+
+## Lambda
+
+Set Lambda's trigger to the same S3 bucket as you're referencing in the webapp above.
+
+```
+def lambda_handler(event, context):
+    try:        
+        bucket = event['Records'][0]['s3']['bucket']['name']
+        filename = event['Records'][0]['s3']['object']['key']
+                
+        print("File uploaded: " + filename)                
+    except Exception as e:
+        print(e)
+```
