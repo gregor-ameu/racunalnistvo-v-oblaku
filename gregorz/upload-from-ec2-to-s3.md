@@ -1,6 +1,7 @@
 On your EC2 instance:
 1. Stop apache, from now on, we will be serving pages with flask: `sudo systemctl status apache2`
-2. Create `/home/admin/flask_s3_app/app.py` with the following content:
+2. Install flask: `sudo apt install python3-flask`
+3. Create `/home/admin/flask_s3_app/app.py` with the following content:
 
 ```
 from flask import Flask, request, render_template_string
@@ -41,9 +42,9 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=False)
 ```
 
-3. Set S3_BUCKET var to your bucket's name
-4. Run the app: `sudo python3 app.py`
-5. You should see something like:
+4. Set S3_BUCKET var to your bucket's name
+5. Run the app: `sudo python3 app.py`
+6. You should see something like:
 
 ```
  * Serving Flask app 'app'
@@ -55,5 +56,5 @@ WARNING: This is a development server. Do not use it in a production deployment.
 Press CTRL+C to quit
 ```
 
-6. Visit your EC2's public IP with browser and try uploading a file.
-6. Ensure it's inside your S3 bucket.
+7. Visit your EC2's public IP with browser and try uploading a file.
+8. Ensure it's inside your S3 bucket.
