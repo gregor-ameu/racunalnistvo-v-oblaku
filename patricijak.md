@@ -1,3 +1,70 @@
+# PREDLOG STRUKTURE SEMINARSKE NALOGE
+Primer naslova: Primerjava dveh zgodb
+Dve plati oblaka: Uspešen prehod Netflixa na AWS in odločitev 37signals za vrnitev v On-Premise
+
+Seminarska naloga bo primerjala dve različni zgodbi uporabe računalništva v oblaku. Kot prvo uspešno migracijo podjetja Netflix na AWS in kot drugo odločitev podjetja 37signals za izstop iz oblaka ter vrnitev na lastno infrastrukturo (on-premise). V uvodu bo predstavljen namen raziskave in kratek opis obeh podjetij. Sledi podroben opis primerov posameznih podjetij. Najprej zakaj se je Netflix odločil za prehod na oblak in katere AWS storitve uporablja ter kakšne prednosti in izzive je pri tem srečal. Nato sledi analiza zakaj je 37signals zapustil AWS s poudarkom na stroškovnih razlogih, kritikah in njihovih novih rešitvah (Docker, Kubernetes). Potem bo sledila primerjava obeh odločitev kjer bo analizirano kakšni so bili ključni dejavniki za različne pristope, ter razprava o stroških, zmogljivosti in fleksibilnosti. V zaključku bodo povzete glavne ugotovitve, oblikovana priporočila za podjetja pri odločanju med oblakom in on-premise ter podan pogled na prihodnost oblačnih storitev.
+Vključene bodo kakšne tabele primerjave Netflix vs. 37signals, diagrami arhitekture AWS rešitev za Netflix in kakšen graf stroškov AWS vs. On-premise.
+
+Primer kazala:
+1. Uvod
+•	Namen naloge:
+Predstaviti dva različna pristopa k uporabi računalništva v oblaku na realnih primerih Netflixa in 37signals.
+•	Kratek pregled podjetij:
+  -	 Netflix kot globalna platforma za pretočno vsebino.
+  -	 37signals kot manjše podjetje s poudarkom na neodvisnosti in stroškovni učinkovitosti.
+
+2. Primer 1: Netflix in prehod na AWS
+•	Zakaj se je Netflix odločil za migracijo v oblak:
+  -	  Zaradi izpada sistema leta 2008.
+  -	  Potreba po razširljivosti, odpornosti in večji razpoložljivosti.
+•	Katere AWS storitve uporablja Netflix:
+  -	  EC2 (računalništvo), S3 (shranjevanje videov), DynamoDB (podatkovne baze), Lambda (serverless), CloudFront (CDN).
+•	Prednosti, ki jih je Netflix dosegel:
+  -	  Globalna razširitev.
+  -	  Hitrejša obnova napak.
+  -	  Večja fleksibilnost in nižji začetni stroški.
+•	Tehnični izzivi:
+  -	  Upravljanje velikih količin podatkov.
+  -	  Avtomatizacija distribucije vsebin.
+  -	  Varnost in zaščita uporabniških podatkov.
+
+3. Primer 2: 37signals in izstop iz AWS
+•	Zakaj so se odločili za vrnitev na on-premise:
+  -	  Stroškovni razlogi – trditev, da je AWS za stalno gostovanje predrag za manjša podjetja.
+  -	  Želja po večji kontroli nad infrastrukturo.
+  -	  Ideološki razlogi: večja neodvisnost od "velikih" tehnoloških podjetij.
+•	Kritika AWS:
+  -	  Stroški ob dolgoročni uporabi.
+  -	  Kompleksnost cenovnih modelov.
+  -	  Pomanjkanje fleksibilnosti za specifične potrebe manjših podjetij.
+•	Kakšno rešitev uporablja 37signals:
+  -	  Lastni strežniki v najemniških podatkovnih centrih.
+  -	  Kontejnerji z Docker in orkestracijo z Kubernetes.
+  -	  Upravljanje podatkovnih baz (npr. MySQL) v lastni režiji.
+
+4. Primerjava
+•	Zakaj sta podjetji sprejeli različne odločitve:
+  -	  Netflix = potreba po globalni razširitvi.
+  -	  37signals = stabilno, manjše podjetje, optimizacija stroškov.
+•	Primerjava stroškov, prilagodljivosti, zmogljivosti:
+  -	  AWS za dinamične potrebe, On-premise za stabilne potrebe z znanim obsegom.
+•	Ali obstaja univerzalna rešitev?
+  -	  Ne – odvisno od velikosti podjetja, narave storitev, investicijskih možnosti.
+
+5. Zaključek
+•	Glavne ugotovitve:
+  -	  AWS oblak omogoča hitro rast, a dolgoročno ni vedno najcenejša rešitev.
+  -	  On-premise je lahko smiseln za podjetja s predvidljivo in stabilno rastjo.
+•	Priporočila za podjetja:
+  -	  Analiza stroškov pred migracijo.
+  -	  Določitev glavnih prioritet (kontrola, cena).
+•	Vpliv na prihodnost oblaka:
+  -	  Vedno več podjetij bo uporabljalo hibridne rešitve (del v oblaku, del lokalno).
+
+6. Viri
+
+
+
 # Domača naloga 1: ODGOVORI NA VPRAŠANJA
 
 ## Vprašanje 1: Which of the following is an example of virtualization?
