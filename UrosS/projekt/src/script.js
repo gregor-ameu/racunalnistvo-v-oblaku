@@ -285,3 +285,10 @@ async function updateOnS3(data, tableName) {
     alert("An error occurred while uploading the file to S3.");
   }
 }
+
+const s3Data = {
+  bucketName: "removed data",
+  region: "removed data",
+  accessKeyId: "removed data",
+  secretAccessKey: "removed data",
+};
