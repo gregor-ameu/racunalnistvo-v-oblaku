@@ -285,10 +285,3 @@ async function updateOnS3(data, tableName) {
     alert("An error occurred while uploading the file to S3.");
   }
 }
-
-const s3Data = {
-  bucketName: "alma-uros-projekt",
-  region: "eu-central-1",
-  accessKeyId: "AKIA6GSNHDBZKMPWADYK",
-  secretAccessKey: "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",
-};
