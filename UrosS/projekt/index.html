@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database Management</title>
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Database Management</h1>
+
+      <!-- Form Section -->
+      <div class="form-section">
+        <!-- Create New Table Section -->
+        <div class="form-row">
+          <button id="createTable">Create New Table</button>
+          <input type="text" id="tableName" placeholder="Enter Table Name" />
+        </div>
+
+        <!-- Row for Add Table Data -->
+        <div class="form-row">
+          <button id="addTableData">Add Table Data</button>
+          <select id="tableList">
+            <option value="" disabled selected>Select Existing Table</option>
+          </select>
+        </div>
+
+        <!-- New Row for Number and Name Inputs -->
+        <div class="form-row">
+          <input type="number" id="numberInput" placeholder="Number Input" />
+          <input type="text" id="nameInput" placeholder="Name Input" />
+        </div>
+
+        <!-- Divider Line -->
+        <hr />
+
+        <!-- Row for Check Updates -->
+        <div class="form-row centered-row">
+          <select id="selectedTable">
+            <option value="" disabled selected>Select a Table</option>
+          </select>
+          <button id="checkUpdates">Check for Updates</button>
+        </div>
+      </div>
+
+      <!-- Table Section -->
+      <div class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Date</th>
+              <th>Number</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- AWS SDK for JavaScript -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1359.0.min.js"></script>
+    <!-- Main JavaScript -->
+    <script src="src/script.js"></script>
+  </body>
+</html>
