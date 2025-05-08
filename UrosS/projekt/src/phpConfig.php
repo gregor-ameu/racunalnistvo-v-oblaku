@@ -1,6 +1,7 @@
 <?php
 // Database configuration
-$servername = "your_server_name"; // Replace with your server name
-$username = "your_username";     // Replace with your username
-$password = "your_password";     // Replace with your password
+$servername = "10.0.0.77"; // Replace with your server name
+$username = "uros";     // Replace with your username
+$password = "password";     // Replace with your password
+$database = "projekt"; // Replace with your database name
 ?>

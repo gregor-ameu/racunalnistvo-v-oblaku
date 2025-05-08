@@ -1,8 +1,10 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // povezava z bazo
 require_once 'phpConfig.php';
-
-$database = "projekt";
 
 $conn = new mysqli($servername, $username, $password, $database);
 

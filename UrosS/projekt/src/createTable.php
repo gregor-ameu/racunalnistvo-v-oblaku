@@ -2,8 +2,6 @@
 // Include database configuration
 require_once 'phpConfig.php';
 
-$database = "projekt";
-
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
@@ -36,9 +34,9 @@ if ($result->num_rows > 0) {
 // Create the new table
 $sql = "CREATE TABLE $tableName (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     numberInput DOUBLE NOT NULL,
-    nameInput VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    nameInput VARCHAR(255) NOT NULL
 )";
 
 if ($conn->query($sql) === TRUE) {

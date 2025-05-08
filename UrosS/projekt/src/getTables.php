@@ -2,8 +2,6 @@
 // Include database configuration
 require_once 'phpConfig.php';
 
-$database = "projekt";
-
 $conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection

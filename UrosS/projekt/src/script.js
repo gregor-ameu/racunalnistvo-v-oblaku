@@ -18,26 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Call updateTableLists on page load
   updateTableLists();
 
-  // Add dummy data to the table
-  const addDummyDataToTable = () => {
-    const dummyData = [
-      { id: 1, date: "2025-04-01", number: 10, city: "New York" },
-      { id: 2, date: "2025-04-02", number: 20, city: "Los Angeles" },
-      { id: 3, date: "2025-04-03", number: 30, city: "Chicago" },
-    ];
-
-    dummyData.forEach((data) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td>${data.id}</td>
-        <td>${data.date}</td>
-        <td>${data.number}</td>
-        <td>${data.city}</td>
-      `;
-      tableBody.appendChild(row);
-    });
-  };
-
   // Call the function to populate the table with dummy data
   addDummyDataToTable();
 
@@ -103,12 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add event listeners for button functionality
   createTableButton.addEventListener("click", () => {
     createNewTable(tableNameInput, createTableButton);
-    updateTableLists(); // Refresh the table list after creating a new table
   });
 
   addTableDataButton.addEventListener("click", () => {
-    addToDB(numberInput, nameInput, tableList);
-    updateSelectedTable(tableList, selectedTableDropdown); // Update the table data after adding new data
+    addToDB(numberInput, nameInput, tableList, selectedTableDropdown);
     // Clear the input fields after the button is clicked
     numberInput.value = "";
     nameInput.value = "";
@@ -128,7 +106,7 @@ function createNewTable(tableNameInput, button) {
   }
 
   // Send request to the server to create a new table
-  fetch("createTable.php", {
+  fetch("src/createTable.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -139,6 +117,10 @@ function createNewTable(tableNameInput, button) {
     .then((data) => {
       console.log(data); // Display server response
       alert(data); // Show success or error message
+    })
+    .then(() => {
+      // Update the table lists after creating a new table
+      updateTableLists();
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -151,7 +133,7 @@ function createNewTable(tableNameInput, button) {
 }
 
 // Function to add data to the database
-function addToDB(numberInput, nameInput, tableList) {
+function addToDB(numberInput, nameInput, tableList, selectedTableDropdown) {
   // Get the selected database and input values
   const numberInputValue = numberInput.value.trim();
   const nameInputValue = nameInput.value.trim();
@@ -164,7 +146,7 @@ function addToDB(numberInput, nameInput, tableList) {
   }
 
   // Send data to the server using fetch
-  fetch("addToTable.php", {
+  fetch("src/addToTable.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -180,6 +162,9 @@ function addToDB(numberInput, nameInput, tableList) {
       console.log(data); // Display server response
       alert(data); // Show success or error message
     })
+    .then(() => {
+      updateSelectedTable(tableList, selectedTableDropdown); // Update the table data after adding new data
+    })
     .catch((error) => {
       console.error("Error:", error);
       alert("An error occurred while adding data to the database.");
@@ -191,8 +176,8 @@ function addToDB(numberInput, nameInput, tableList) {
 }
 
 // Function to fetch and display table data
-function getTableData(tableValue) {
-  fetch("selectTable.php", {
+function getTableData(tableValue, update = false) {
+  fetch("src/selectTable.php", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
@@ -201,15 +186,11 @@ function getTableData(tableValue) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data); // Display server response in the console
-
-      // Clear the existing table body
       const tableBody = document.querySelector(".table-section tbody");
       tableBody.innerHTML = "";
-
-      // Check if data contains rows or a message
+      if (update) this.updateOnS3(data, tableValue); // Call the function to update on S3
+      // Populate the table with data
       if (Array.isArray(data)) {
-        // Populate the table with data
         data.forEach((row) => {
           const tableRow = document.createElement("tr");
           tableRow.innerHTML = `
@@ -221,59 +202,93 @@ function getTableData(tableValue) {
           tableBody.appendChild(tableRow);
         });
       } else if (data.message) {
-        alert(data.message); // Show a message if the table is empty
+        alert(data.message);
       } else if (data.error) {
-        alert(data.error); // Show an error message if something went wrong
+        alert(data.error);
       }
     })
     .catch((error) => {
-      console.error("Error:", error);
-      alert("An error occurred while fetching table data.");
+      console.error("Error fetching table data:", error);
     });
 }
 
 // Function to update dropdown lists with table names
 function updateTableLists() {
-  fetch("getTables.php", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
+  fetch("src/getTables.php")
     .then((response) => response.json())
     .then((data) => {
-      if (Array.isArray(data)) {
-        // Clear existing options in both dropdowns
-        const tableList = document.getElementById("tableList");
-        const selectedTableDropdown = document.getElementById("selectedTable");
-        tableList.innerHTML =
-          '<option value="" disabled selected>Select Existing Table</option>';
-        selectedTableDropdown.innerHTML =
-          '<option value="" disabled selected>Select a Table</option>';
+      const tableList = document.getElementById("tableList");
+      const selectedTableDropdown = document.getElementById("selectedTable");
 
-        // Populate dropdowns with table names
+      // Clear existing options
+      tableList.innerHTML =
+        '<option value="" disabled selected>Select Existing Table</option>';
+      selectedTableDropdown.innerHTML =
+        '<option value="" disabled selected>Select a Table</option>';
+
+      // Populate dropdowns
+      if (Array.isArray(data)) {
         data.forEach((tableName) => {
           const option = document.createElement("option");
           option.value = tableName;
           option.textContent = tableName;
 
-          // Add to both dropdowns
           tableList.appendChild(option.cloneNode(true));
           selectedTableDropdown.appendChild(option);
         });
       } else if (data.message) {
-        alert(data.message); // Show a message if no tables exist
+        alert(data.message);
       } else if (data.error) {
-        alert(data.error); // Show an error message if something went wrong
+        alert(data.error);
       }
     })
     .catch((error) => {
-      console.error("Error:", error);
-      alert("An error occurred while fetching table names.");
+      console.error("Error fetching tables:", error);
     });
 }
 
 function updateSelectedTable(tableDataWasAddedTo, selectedTable) {
-  if (tableDataWasAddedTo.value !== selectedTable.value) return;
-  getTableData(tableDataWasAddedTo.value); // Call the function to fetch and display table ta
+  // Update the selected table to the one where data was added
+  selectedTable.value = tableDataWasAddedTo.value;
+  // Fetch and display the data for the updated selected table
+  getTableData(tableDataWasAddedTo.value, true);
 }
+
+async function updateOnS3(data, tableName) {
+  // Convert the data to a JSON Blob
+  const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
+
+  // Initialize the AWS SDK
+  AWS.config.update({
+    region: s3Data.region,
+    accessKeyId: s3Data.accessKeyId,
+    secretAccessKey: s3Data.secretAccessKey,
+  });
+
+  const s3 = new AWS.S3();
+
+  // Prepare the upload parameters
+  const params = {
+    Bucket: s3Data.bucketName,
+    Key: `${tableName}.json`, // File name in S3
+    Body: blob,
+    ContentType: "application/json",
+  };
+
+  try {
+    // Upload the file to S3
+    const result = await s3.upload(params).promise();
+    console.log("File uploaded successfully:", result.Location);
+    alert(`File uploaded successfully to S3: ${result.Location}`);
+  } catch (error) {
+    console.error("Error uploading file to S3:", error);
+    alert("An error occurred while uploading the file to S3.");
+  }
+}
+
+const s3Data = {
+  bucketName: "alma-uros-projekt",
+  region: "eu-central-1",
+  accessKeyId: "AKIA6GSNHDBZKMPWADYK",
+  secretAccessKey: "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",
+};
