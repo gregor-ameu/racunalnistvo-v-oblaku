@@ -1,0 +1,1 @@
+Predlog izpitne naloge je v pripravi za 2. izpitni rok 19.06.2025
