@@ -1,0 +1,85 @@
+############################################################
+                 Minecraft-admin EC2 Instance:
+############################################################
+
+Run Minecraft commands from the admin console directly on the Minecraft server:
+-------------------------------------------------------------------------------
+# Survival server (port 25575):
+./mcrcon/mcrcon -H 10.0.2.163 -P 25575 -p SuperRCONpass123 "say TEST COMMAND FROM SURVIVAL TERMINAL"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25575 -p SuperRCONpass123 "time set night"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25575 -p SuperRCONpass123 "time set day"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25575 -p SuperRCONpass123 "op kojc525"
+
+# Creative server (port 25576):
+./mcrcon/mcrcon -H 10.0.2.163 -P 25576 -p SuperRCONpass123 "say TEST COMMAND FROM CREATIVE TERMINAL"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25576 -p SuperRCONpass123 "time set night"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25576 -p SuperRCONpass123 "time set day"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25576 -p SuperRCONpass123 "op kojc525"
+
+# Custom server (port 25577):
+./mcrcon/mcrcon -H 10.0.2.163 -P 25577 -p SuperRCONpass123 "say TEST COMMAND FROM CUSTOM TERMINAL"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25577 -p SuperRCONpass123 "time set night"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25577 -p SuperRCONpass123 "time set day"
+./mcrcon/mcrcon -H 10.0.2.163 -P 25577 -p SuperRCONpass123 "op kojc525"
+
+
+
+SSH into the Minecraft server from Minecraft-admin (via proxy jump):
+---------------------------------------------------------------------
+ssh -i ~/.ssh/minecraft-key ubuntu@10.0.2.163
+
+
+
+Database details:
+-----------------
+Database name: minecraft2-db  
+Username: admin  
+Password: Sup3rSecret!
+
+
+Connect to the database:
+------------------------
+mysql -h minecraft2-db.ch6wiqkiysjy.eu-north-1.rds.amazonaws.com -P 3306 -u admin -p
+
+
+Exit the database:
+------------------
+exit
+
+
+Display database table:
+-----------------------
+USE minecraft_admin;
+SELECT * FROM users;
+SELECT * FROM admins;
+
+
+
+############################################################
+                 Minecraft-server EC2 Instance:
+############################################################
+
+Connect to a specific Minecraft server container (to exit use Ctrl + D):
+------------------------------------------------------------------------
+docker exec -it mc-survival rcon-cli  
+docker exec -it mc-creative rcon-cli  
+docker exec -it mc-custom rcon-cli  
+
+
+Show all containers:
+-----------------------
+docker ps
+
+
+Restart all containers:
+-----------------------
+cd ~/minecraft  
+docker compose down  
+docker compose up -d  
+
+
+Check the current whitelists:
+-----------------------------
+cat ~/minecraft/survival/whitelist.json  
+cat ~/minecraft/creative/whitelist.json  
+cat ~/minecraft/custom/whitelist.json  
