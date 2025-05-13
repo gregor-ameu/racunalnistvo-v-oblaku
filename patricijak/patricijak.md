@@ -1,3 +1,317 @@
+# DOMAČA NALOGA 3: 
+
+## Slike naloge:
+
+![vpc](https://github.com/user-attachments/assets/af361d49-edad-435e-b651-cb5f8b3fa84c)
+
+![sg](https://github.com/user-attachments/assets/ee83c049-9705-4709-88da-d869443c8f7e)
+
+![rt2](https://github.com/user-attachments/assets/f47a0569-a300-4861-94c0-11424c8b7dde)
+
+![rt](https://github.com/user-attachments/assets/9397c27b-f327-41b2-9855-25951384940d)
+
+![gw](https://github.com/user-attachments/assets/d08c93a0-02fb-4238-966e-9ec56797c84e)
+
+![ec2](https://github.com/user-attachments/assets/a636680e-fe9c-4275-8b95-8fa0135d1153)
+
+![apache](https://github.com/user-attachments/assets/7224d79e-2f30-45f1-a5bd-a9a32629af03)
+
+![almameter html](https://github.com/user-attachments/assets/2b5df98c-0372-4cec-8a6b-fb94b24fe279)
+
+![index html](https://github.com/user-attachments/assets/12e2735d-e59a-444d-a047-470f3ba98bc0)
+
+![hobiji html](https://github.com/user-attachments/assets/67386c10-c5e4-40b5-9c02-7148d7492e3f)
+
+![style css](https://github.com/user-attachments/assets/28623953-4acb-4de2-8e83-f48c20f08867)
+
+![slika png](https://github.com/user-attachments/assets/fdc929e3-bcf8-42c3-8dc4-dc48ab2c5164)
+
+![spletna stran](https://github.com/user-attachments/assets/720a1df9-24df-4511-b5ae-692898f94e8b)
+
+
+## KODA almamater.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Patricija Kotnjek - Alma Mater</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Patricija Kotnjek/h1>
+        <div class="menu">
+            <a href="index.html">Domov</a>
+            <a href="hobiji.html">Hobiji</a>
+            <a href="almamater.html">Alma Mater</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Študij na Alma Mater</h2>
+        <p>Sem študentka na Almi Mater smeri Spletne in informacijske tehnologije. Tukaj sem se že naučila nekaj novih stvari:</p>
+        <ul>
+            <li>Programirati</li>
+            <li>Urejanjem podatkovnih baz</li>
+            <li>Kriptografijo</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+## KODA index.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Patricja Kotnjek - Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Patricija Kotnjek</h1>
+        <div class="menu">
+            <a href="index.html">Domov</a>
+            <a href="hobiji.html">Hobiji</a>
+            <a href="almamater.html">Alma Mater</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>O meni</h2>
+        <img src="slika.png" alt="Moja fotografija" width="200">
+        <p>Pozdravljeni! Sem Patricija Kotnjek. Trenutno sem vzporedna študentka z Academie in sem prišla na Almo Mater si pridobivat nova znanja.</p>
+    </div>
+</body>
+</html>
+
+
+## KODA hobiji.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Patricija Kotnjek - Hobiji</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Patricija Kotnjek</h1>
+        <div class="menu">
+            <a href="index.html">Domov</a>
+            <a href="hobiji.html">Hobiji</a>
+            <a href="almamater.html">Alma Mater</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Moji Hobiji</h2>
+        <p>V prostem času se ukvarjam z:</p>
+        <ul>
+            <li>Grafičnim oblikovanjem</li>
+            <li>Branjem knjig</li>
+            <li>Svojim psom</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+## KODA style.css:
+
+body {
+    background-color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: white;
+    margin: 0;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #575757;
+}
+
+.content {
+    background-color: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+
+## Vprašanja
+
+## Vprašanje 1: Kaj je naslov IP?
+
+**Odgovor:** IP naslov (Internet Protocol naslov) je edinstvena številčna oznaka, ki jo ima vsaka naprava, povezana v omrežje, kot je internet ali lokalno omrežje. IP naslov omogoča identifikacijo in komunikacijo med napravami v omrežju.
+
+
+## Vprašanje 2: Zakaj potrebujemo naslove IP?
+
+**Odgovor:** IP naslove potrebujemo zato, da omogočimo komunikacijo med napravami v omrežju, predvsem na internetu. Tukaj je nekaj glavnih razlogov, zakaj so IP naslovi pomembni: identifikacijo naprav, usmerjanje podatkov, za povezovanje z internetom, ločevanje omrežij in zaradi varnostne funkcije (požarni zid). 
+
+
+## Vprašanje 3: Katerim napravam se dodeli IP naslov?
+
+**Odgovor:** IP naslov se dodeli vsaki napravi, ki je povezana v omrežje. Kot so na primer računalniki, telefoni, usmerjevalniki, strežniki in pametne naprave (tablica, telefon). Omogoča jim identifikacijo in komunikacijo z drugimi napravami v lokalnem omrežju ali na internetu.
+
+
+## Vprašanje 4: Katera dva dela sestavljata naslov IP?
+
+**Odgovor:** IP naslov sestavljata omrežni del (network) in gostiteljski del (host). Omrežni del določa v katerem omrežju se naprava nahaja in gostiteljski del pa identificira posamezno napravo znotraj tega omrežja.
+
+
+
+## Vprašanje 5: Kako vemo kateri del je kateri?
+
+**Odgovor:** Kateri del IP naslova je omrežni in kateri gostiteljski, določa maska omrežja (Subnet Mask).
+
+- Omrežni del so biti, kjer je v maski omrežja vrednost 1.
+
+- Gostiteljski del so biti, kjer je v maski omrežja vrednost 0.
+
+
+
+## Vprašanje 6:  Napiši dva pravilna IP naslova in dva napačna IP naslova.
+
+**Odgovor:** 
+
+Pravilna IP naslova:
+
+    192.168.1.100 (zasebni IP v IPv4)
+
+    10.0.0.1 (zasebni IP v IPv4)
+
+Napačna IP naslova:
+
+    300.25.14.8 (številka 300 presega dovoljeni obseg 0–255)
+
+    192.168.1.256 (številka 256 presega dovoljeni obseg 0–255)
+
+
+
+## OPIS NALOGE:
+V tej nalogi sem najprej ustvarila lastno virtualno omrežje (VPC) v okolju AWS. VPC je bil zasnovan tako, da podpira do 100 računalnikov. Uporabila sem IP naslove iz razreda A. Nato sem znotraj tega omrežja ustvarila dve ločeni podomrežji: eno javno in eno zasebno. Vsako s kapaciteto za približno 30 naprav.
+
+V nadaljevanju sem javno podomrežje povezala z internetom. Za tem sem dodala internetni prehod (Internet Gateway) nastavila ustrezne poti v usmerjevalni tabeli (Route Table) in prilagodila varnostna pravila (Security Group), da sem omogočila dostop do spletnega strežnika prek brskalnika.
+
+Ko je bila omrežna infrastruktura pripravljena, sem zagnala novo EC2 instanco v javnem podomrežju. Na tej instanci sem nato namestila spletni strežnik Apache. Apcache sem nato zagnala in poskrbela, da se ob vsakem zagonu sistema samodejno vključi.
+
+Na svojem lokalnem računalniku sem izdelala preprosto statično predstavitveno spletno stran, ki vsebuje tri podstrani: index.html (splošen opis o meni), hobiji.html in almamater.html (Alma Mater). Poleg tega sem s pomočjo CSS oblikovala videz strani – določila sem ozadje, spremenila pisavo in postavitev elementov. Na stran sem vključila tudi "svojo" fotografijo.
+
+Vse datoteke povezane s spletno stranjo (HTML, CSS in slike) sem nato prenesla na EC2 instanco, natančneje v mapo /var/www/html. Tukaj jih laho strežnik Apache prikaže uporabniku. Po prenosu sem v brskalniku odprla javni IP naslov instance in preverila ali spletna stran deluje pravilno.
+
+Na koncu sem ustvarila novo mapo kjer sem shranila vse datoteke, ki sem jih uporabila pri projektu – spletne datoteke, posnetek zaslona delujoče strani in to opisno datoteko. Vse skupaj sem nato naložila v repozitorij in oddala nalogo s »pull requestom«, kot je bilo zahtevano.
+
+
+
+
+
+
+
+## PREDLOG STRUKTURE SEMINARSKE NALOGE
+Primer naslova: Primerjava dveh zgodb
+Dve plati oblaka: Uspešen prehod Netflixa na AWS in odločitev 37signals za vrnitev v On-Premise
+
+Seminarska naloga bo primerjala dve različni zgodbi uporabe računalništva v oblaku. Kot prvo uspešno migracijo podjetja Netflix na AWS in kot drugo odločitev podjetja 37signals za izstop iz oblaka ter vrnitev na lastno infrastrukturo (on-premise). V uvodu bo predstavljen namen raziskave in kratek opis obeh podjetij. Sledi podroben opis primerov posameznih podjetij. Najprej zakaj se je Netflix odločil za prehod na oblak in katere AWS storitve uporablja ter kakšne prednosti in izzive je pri tem srečal. Nato sledi analiza zakaj je 37signals zapustil AWS s poudarkom na stroškovnih razlogih, kritikah in njihovih novih rešitvah (Docker, Kubernetes). Potem bo sledila primerjava obeh odločitev kjer bo analizirano kakšni so bili ključni dejavniki za različne pristope, ter razprava o stroških, zmogljivosti in fleksibilnosti. V zaključku bodo povzete glavne ugotovitve, oblikovana priporočila za podjetja pri odločanju med oblakom in on-premise ter podan pogled na prihodnost oblačnih storitev.
+Vključene bodo kakšne tabele primerjave Netflix vs. 37signals, diagrami arhitekture AWS rešitev za Netflix in kakšen graf stroškov AWS vs. On-premise.
+
+Primer kazala:
+1. Uvod
+•	Namen naloge:
+Predstaviti dva različna pristopa k uporabi računalništva v oblaku na realnih primerih Netflixa in 37signals.
+•	Kratek pregled podjetij:
+  -	 Netflix kot globalna platforma za pretočno vsebino.
+  -	  37signals kot manjše podjetje s poudarkom na neodvisnosti in stroškovni učinkovitosti.
+
+2. Primer 1: Netflix in prehod na AWS
+•	Zakaj se je Netflix odločil za migracijo v oblak:
+  -	  Zaradi izpada sistema leta 2008.
+  -	  Potreba po razširljivosti, odpornosti in večji razpoložljivosti.
+•	Katere AWS storitve uporablja Netflix:
+  -	  EC2 (računalništvo), S3 (shranjevanje videov), DynamoDB (podatkovne baze), Lambda (serverless), CloudFront (CDN).
+•	Prednosti, ki jih je Netflix dosegel:
+  -	  Globalna razširitev.
+  -	  Hitrejša obnova napak.
+  -	  Večja fleksibilnost in nižji začetni stroški.
+•	Tehnični izzivi:
+  -	  Upravljanje velikih količin podatkov.
+  -	  Avtomatizacija distribucije vsebin.
+  -	  Varnost in zaščita uporabniških podatkov.
+
+3. Primer 2: 37signals in izstop iz AWS
+•	Zakaj so se odločili za vrnitev na on-premise:
+  -	  Stroškovni razlogi – trditev, da je AWS za stalno gostovanje predrag za manjša podjetja.
+  -	  Želja po večji kontroli nad infrastrukturo.
+  -	  Ideološki razlogi: večja neodvisnost od "velikih" tehnoloških podjetij.
+•	Kritika AWS:
+  -	  Stroški ob dolgoročni uporabi.
+  -	  Kompleksnost cenovnih modelov.
+  -	  Pomanjkanje fleksibilnosti za specifične potrebe manjših podjetij.
+•	Kakšno rešitev uporablja 37signals:
+  -	  Lastni strežniki v najemniških podatkovnih centrih.
+  -	  Kontejnerji z Docker in orkestracijo z Kubernetes.
+  -	  Upravljanje podatkovnih baz (npr. MySQL) v lastni režiji.
+
+4. Primerjava
+•	Zakaj sta podjetji sprejeli različne odločitve:
+  -	  Netflix = potreba po globalni razširitvi.
+  -	  37signals = stabilno, manjše podjetje, optimizacija stroškov.
+•	Primerjava stroškov, prilagodljivosti, zmogljivosti:
+  -	  AWS za dinamične potrebe, On-premise za stabilne potrebe z znanim obsegom.
+•	Ali obstaja univerzalna rešitev?
+  -	  Ne – odvisno od velikosti podjetja, narave storitev, investicijskih možnosti.
+
+5. Zaključek
+•	Glavne ugotovitve:
+  -	  AWS oblak omogoča hitro rast, a dolgoročno ni vedno najcenejša rešitev.
+  -	  On-premise je lahko smiseln za podjetja s predvidljivo in stabilno rastjo.
+•	Priporočila za podjetja:
+  -	  Analiza stroškov pred migracijo.
+  -	  Določitev glavnih prioritet (kontrola, cena).
+•	Vpliv na prihodnost oblaka:
+  -	  Vedno več podjetij bo uporabljalo hibridne rešitve (del v oblaku, del lokalno).
+
+6. Viri
+
+
+
+
+
+
+
+
 # Domača naloga 2: Authenticator MFA
 
 ##Naloga je bila, da svoj account v AWS zavarujemo z MFA. Tega sem se lotila tako, da sem si sprva na mobilni telefon naložila Google Authenticator in se lotila v AWS pod My security credentials dodat My multi-factor authentication (MFA). Nato sen si izbrala ime PatricijaDevice ter se odločila za drugo opcijo zavarovanje z Authenticator app. Ker je računalnik različne blagovne zanmke kot telefon sem lahko dostopala samo do Google Authenticatorja. Tako sem na telefon namestila aplikacijo in skenirala QR kodo. Nato sem morala v AWS zapisati dve zaporedni kodi, ki sem ji prodbila na 30 sekund. S tem sem zavarovala svoj AWS account. 
