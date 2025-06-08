@@ -1,0 +1,80 @@
+Domaca naloga #1
+
+Danis Altumbabić
+
+Which of the following is an example of virtualization?
+d) Multiple virtual machines running on the same server
+
+Which resources provide the ‘brains’ to process your workloads, including what is required to process and run requests from applications?
+a) Compute
+
+When you need to provision a resource within the cloud, ____ makes it almost immediately available to you to allocate where and when you need it.
+d) On-demand resourcing
+
+A ____ cloud deployment model is where a vendor makes available the use of shared infrastructure, including compute, storage, and network resources, that can be provisioned on demand and typically accessed over the internet.
+d) Public
+
+How are costs generally charged for cloud resources?
+a) Utility-based metering where you only pay for what you use.
+
+What concept or characteristic of cloud computing does this represent? (Deploying a small website, adding AI, and then expanding globally)
+a) On-demand resourcing
+
+The ____ cloud service model offers a balance between customization and user control, allowing developers to focus on designing at the application layer while the service handles the administration of the virtual architecture, including the network and operating system.
+b) Platform-as-a-Service (PaaS)
+
+What concept or characteristic of cloud computing does this represent? (Deploying a small website, adding AI, expanding globally)
+b) High availability
+
+Which of the following are not the sole responsibility of public cloud customers? (Choose 2)
+a) Patch Management
+d) Network Controls
+
+Which cloud resource saves and retains data, and is available at an almost unlimited amount within the cloud?
+d) Storage
+
+The ____ cloud service model offers the greatest amount of user customization and control but requires the greatest amount of user administration including the operating system, but not physical hardware.
+a) Infrastructure-as-a-Service (IaaS)
+
+What benefit of cloud computing allows you to increase or decrease the power or quantity of resources at any time, without extensive installation or physical processes of provisioning?
+b) Scalability
+
+What do you recommend the restaurant owner do?
+b) Implement a public cloud-computing environment.
+
+Under the Shared Responsibility Model, which of the following would be the end user's responsibility?
+d) Encryption of data stored within a cloud storage service such as Amazon Elastic Block Store
+
+The ____ model requires no software installation and focuses on design simplicity and ease of use. It offers a minimal level of service customization.
+b) Software-as-a-Service (SaaS)
+
+Which of the following cloud offerings would you suggest to your client?
+b) Platform as a Service (PaaS)
+
+This is an example of the ____ cloud deployment model. (Using both vendor-managed cloud and on-premises hardware)
+c) Hybrid
+
+One can argue that security on the public cloud is superior to on-premise security. Why is this? (Choose 2)
+a) Public cloud vendor services must meet international security requirements.
+c) Public cloud vendor services must meet multiple business industries' security and governance requirements.
+
+What is a key benefit of Virtualization?
+a) Reduced capital expenditure
+
+Which of the following cloud computing concepts refers to increasing or decreasing compute resources based on demand?
+a) Elasticity
+
+Which resources provide the connectivity allowing all other resources to communicate with each other?
+a) Network
+
+In what way is a private cloud model similar to a public cloud model?
+c) Both private and public cloud models use virtualization to differentiate themselves from traditional on-premise servers.
+
+Which of the following is not a characteristic of the public cloud?
+b) One-time costs for virtual resources
+
+Under the Shared Responsibility Model, which of the following would be the end user's responsibility?
+a) Encryption of data stored within a cloud storage service such as Amazon Elastic Block Store
+
+What cloud resource type stores structured data used by cloud applications?
+d) Database
