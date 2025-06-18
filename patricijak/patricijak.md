@@ -1,3 +1,96 @@
+# POPRAVEK NALOG za izpit:
+povezava do spletnega mesta: file:///C:/Users/Stanko/Desktop/ALMA-DN3/index.html
+
+## 1. Dodajanje še druge slike v spletno mesto:
+
+Nova html koda za almamater.html:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Patricija Kotnjek - Alma Mater</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Patricija Kotnjek</h1>
+        <div class="menu">
+            <a href="index.html">Domov</a>
+            <a href="hobiji.html">Hobiji</a>
+            <a href="almamater.html">Alma Mater</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>Študij na Alma Mater</h2>
+        <img src="almamater.png" alt="Logo univerze Alma Mater" width="200">
+        <p>Sem študentka na Almi Mater, smer Spletne in informacijske tehnologije. 
+        Študij mi je omogočil spoznavanje različnih področij, kot so:</p>
+        <ul>
+            <li>Programiranje</li>
+            <li>Urejanje podatkovnih baz</li>
+            <li>Kriptografija</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+
+Slika html kode in strani:
+
+![Almamater html NOVO](https://github.com/user-attachments/assets/38fd199f-b326-427f-89c2-11e63c21650f)
+
+![almamater splet NOVO](https://github.com/user-attachments/assets/5b9b31c3-a41c-40da-9815-76a89096b83b)
+
+
+## 2. Ustvarjanje S3 in dodajanje slik ter povezave slik:
+
+![Bucket](https://github.com/user-attachments/assets/d15017d3-0847-4875-860f-68b8745cce55)
+
+![S3 rules](https://github.com/user-attachments/assets/19043d78-9c15-4d53-9792-9d95218d357c)
+
+![Dodajanje rules](https://github.com/user-attachments/assets/8cb6ebda-8fc1-407f-ae0d-8341838a4f72)
+
+![Dodan rules](https://github.com/user-attachments/assets/9fbb3085-fd9f-4543-9215-a991484d7369)
+
+![Static website hosting](https://github.com/user-attachments/assets/d9749cb0-e6d8-46a1-9549-217b7d8f38c6)
+
+![Bucket policy](https://github.com/user-attachments/assets/c3daab9c-e55c-4802-8d18-6e5644fd3c91)
+
+![Naloženi sliki](https://github.com/user-attachments/assets/0d2bf3ef-b98f-4eb0-a536-372923ec4988)
+
+![Primer naložene slike](https://github.com/user-attachments/assets/f6a97e56-a16f-484d-a880-9586ec52fab6)
+
+![Primer slike](https://github.com/user-attachments/assets/fae6c831-c0b0-4617-afef-bedf9c031b9d)
+
+Povezavi do slik:
+
+https://patricija-s3-bucket.s3.eu-central-1.amazonaws.com/almamater.jpg
+
+https://patricija-s3-bucket.s3.eu-central-1.amazonaws.com/slika.jpg
+
+
+## 3. Ustvaranje ključev in namizni S3 browser:
+
+![Ustvarjanje ključev](https://github.com/user-attachments/assets/f460ec9c-8334-4693-ad6b-830760f515bd)
+
+![Ključa s3](https://github.com/user-attachments/assets/8a1b69ae-3d98-44c2-bade-41382cec8099)
+
+![Nalaganje ključev](https://github.com/user-attachments/assets/572a9335-0b89-48e0-9994-9a7da180e03a)
+
+![Vpis s3 namizje](https://github.com/user-attachments/assets/862c3b82-8039-4894-b427-58b1f00989ad)
+
+
+
+
+
+
+
+
+
+
+
 # DOMAČA NALOGA 3: 
 
 ## Slike naloge:
